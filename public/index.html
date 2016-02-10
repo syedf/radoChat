@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="radoChat">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>RadoChat</title>
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav style="background-color: #009688">
+            <div class="nav-wrapper container">
+                <a ui-sref="chatRoom" class="brand-logo center">RadoChat</a>
+                <a ui-sref="about" class="right">About</a>
+            </div>
+        </nav>
+    </div>
+    <div class="container" ui-view></div>
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.16/angular-ui-router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" href="css/main.css">
+<script src="vendor/ng-file-upload-shim.js"></script>
+<script src="vendor/ng-file-upload.js"></script>
+<script src="vendor/socket.js"></script>
+<script src="js/controllers/rootCtrl.js"></script>
+<script src="js/controllers/chatRoomCtrl.js"></script>
+<script src="js/services/socketService.js"></script>
+</html>

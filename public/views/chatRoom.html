@@ -1,0 +1,54 @@
+<section id="chatWindow">
+    <div id="modal" class="modal">
+        <form>
+            <div class="modal-content">
+                <h4>Choose a Nickname</h4>
+                <input type="text" ng-model="name">
+            </div>
+            <div class="modal-footer">
+                <button class="btn modal-action modal-close waves-effect waves-green btn-flat" ng-click="addNewUser(name)" type="submit"><i class="material-icons">done</i></button>
+            </div>
+        </form>
+    </div>
+    <ul class="card small" style ="overflow-y: auto;height: 400px;">
+        <li ng-repeat="msg in messages" >
+            <div>
+                <span style="font-weight: bold">{{msg.from}}:</span>
+                <h7>{{msg.msg}}</h7>
+                <div ng-if="msg.img.length">
+                    <a ng-click="showModal(msg.img)">
+                        <img class="center" ngf-src="msg.img" style="height: 150px; width: auto">
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <form name="chatbox">
+        <input type="text" ng-model="msg"/>
+        <div ng-if="attachment" style="width: 100px;height: 100px;">
+            <a>
+                <img ngf-src="attachment" class="responsive-img">
+            </a>
+        </div>
+        <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 65px; right: 24px;">
+            <a class="btn-floating btn-large red">
+                <i class="large mdi-navigation-menu"></i>
+            </a>
+            <ul>
+                <li><a class="btn-floating blue" ng-model="attachment" ngf-select ngf-accept="'image/*'"><i class="material-icons">image</i></a></li>
+                <!--<li><a class="btn-floating red" ng-model="document" ngf-select ngf-accept="'.pdf,.doc,.docx'"><i class="material-icons">work</i></a></li>-->
+            </ul>
+        </div>
+        <a class="btn btn-flat red" ng-show="attachment" ng-click="attachment=''"> X </a>
+        <button class="btn waves-effect right" type="submit" ng-click="sendMessage(msg, attachment, document)">Send<i class="material-icons right">send</i></button>
+    </form>
+    
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <img ngf-src="image" class="responsive-img">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">close</a>
+        </div>
+    </div>
+</section>
